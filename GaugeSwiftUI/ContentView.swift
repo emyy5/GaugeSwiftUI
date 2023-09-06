@@ -9,13 +9,21 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        Gauge(value: 33.0, in: 0.0...100.0){
+            Text("Speed")
+                .foregroundColor(Color.blue)
+        }currentValueLabel: {
+            Text("33")
+                .foregroundColor(Color.blue)
+        }minimumValueLabel: {
+            Text("0")
+                .foregroundColor(Color.blue)
+        }maximumValueLabel: {
+            Text("100")
+                .foregroundColor(Color.blue)
         }
-        .padding()
+        .frame(width: 100, height: 100, alignment: .center)
+        //.gaugeStyle(CircularGaugeStyle(tint: .red))
     }
 }
 
